@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1.page-header Register 
+  p Please Register in the form below
+
+  if errors
+    each error,i in errors
+      div.alert.alert-danger #{error.msg}
+
+  form(action="/users/register" method="post" enctype='multipart/form-data')
+    .form-group
+     label Name
+     input.form-control#name(type="text", name="name" placeholder="Enter your name" )
+
+    .form-group
+     label Email
+     input.form-control#email(type="email", name="email" placeholder="Enter your email id" )
+
+    .form-group
+     label Username
+     input.form-control#username(type="text", name="username" placeholder="Enter your username" )
+
+    
+    .form-group
+     label Password
+     input.form-control#password(type="password", name="password" placeholder="Enter your password" )
+    
+    .form-group
+     label Confrim Password
+     input.form-control#password2(type="password", name="password2" placeholder="Confirm your password" )
+   
+    .form-group
+     label Profile image
+     input#profileimage(type="file", name="profileimage")
+
+    input.btn.btn-primary(type="submit", value="submit", name="submit")

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1.page-header Profile Area
+  p Welcome to profile area below is th user profile
+
+  .container
+    .fb-profile
+        img.fb-image-lg(align='left', src='http://lorempixel.com/850/280/nightlife/5/', alt='Profile image example')
+        img.fb-image-profile.thumbnail(align='left', src='/#{"uploads/"+user.profileimage}', alt='Profile image example')
+        .fb-profile-text
+            h1 !{user.name}
+            p !{user.email}
